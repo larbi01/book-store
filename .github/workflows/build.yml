@@ -12,9 +12,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Move to root
-      run: mv book-store/* . && rm -rf book-store
-
     - name: Set up Java
       uses: actions/setup-java@v4
       with:
