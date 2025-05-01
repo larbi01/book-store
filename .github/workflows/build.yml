@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        path: book-store
 
     - name: Set up Java
       uses: actions/setup-java@v4
@@ -19,7 +21,7 @@ jobs:
         java-version: '17'
 
     - name: Build with Maven
-      working-directory: ./book-service
+      working-directory: book-store/book-service
       run: mvn -B clean package -DskipTests
 
     - name: Set up Docker Buildx
@@ -34,8 +36,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./book-service
-        file: ./book-service/Dockerfile
+        context: book-store/book-service
+        file: book-store/book-service/Dockerfile
         push: true
         tags: larbi01/book-service:latest
 
