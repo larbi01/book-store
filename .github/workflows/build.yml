@@ -1,9 +1,3 @@
-name: Build & Push Docker Image
-
-on:
-  push:
-    branches: [ "dev" ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,6 +5,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Move to root
+      run: mv book-store/* . && rm -rf book-store
 
     - name: Set up Java
       uses: actions/setup-java@v4
@@ -38,3 +35,4 @@ jobs:
         file: ./book-service/Dockerfile
         push: true
         tags: larbi01/book-service:latest
+
