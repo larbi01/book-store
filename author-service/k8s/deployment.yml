@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: author-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: author-service
+  template:
+    metadata:
+      labels:
+        app: author-service
+    spec:
+      containers:
+        - name: author-service
+          image: larbi01/author-service:latest
+          ports:
+            - containerPort: 8080
