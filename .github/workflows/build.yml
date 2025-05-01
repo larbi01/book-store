@@ -19,6 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Build with Maven
+      working-directory: ./book-service
       run: mvn -B clean package -DskipTests
 
     - name: Set up Docker Buildx
