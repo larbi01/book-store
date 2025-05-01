@@ -21,7 +21,7 @@ jobs:
         java-version: '17'
 
     - name: Build with Maven
-      working-directory: book-store/book-service
+      working-directory: .
       run: mvn -B clean package -DskipTests
 
     - name: Set up Docker Buildx
@@ -37,7 +37,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: book-store/book-service
-        file: book-store/book-service/Dockerfile
+        file: ./Dockerfile
         push: true
         tags: larbi01/book-service:latest
 
