@@ -1,2 +1,5 @@
 com/example/bookservice/HelloController.class
+com/example/bookservice/Book.class
+com/example/bookservice/BookController.class
+com/example/bookservice/BookRepository.class
 com/example/bookservice/BookServiceApplication.class
