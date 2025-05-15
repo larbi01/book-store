@@ -3,7 +3,7 @@ package com.example.bookservice;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "book")  // ✅ Force lowercase table name
+@Table(name = "book")
 public class Book {
 
     @Id
