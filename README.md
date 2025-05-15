@@ -51,9 +51,13 @@ kubectl apply -f postgres-deployment.yml
 3. Construction des images Docker
 
 cd book-service
+
 mvn clean package
+
 cd ../author-service
+
 mvn clean package
+
 
 Construisez ensuite les images Docker :
 
@@ -66,11 +70,15 @@ docker build -t author-service:latest ./author-service
 Créez les déploiements et services Kubernetes :
 
 cd book-service/k8s
+
 kubectl apply -f deployment.yml
+
 kubectl apply -f service.yml
 
 cd ../../author-service/k8s
+
 kubectl apply -f deployment.yml
+
 kubectl apply -f service.yml
 
 Vérifiez que les pods sont en cours d'exécution :
