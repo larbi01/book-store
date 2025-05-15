@@ -19,7 +19,7 @@ public class BookServiceApplication {
     @Bean
     CommandLineRunner init(BookRepository repo) {
         return args -> {
-            System.out.println("📘 STARTING INIT");
+            System.out.println(" STARTING INIT");
 
             if (repo == null) {
                 System.out.println("❌ BookRepository is NULL!");
@@ -27,12 +27,12 @@ public class BookServiceApplication {
             }
 
             try {
-                System.out.println("📥 Inserting books...");
+                System.out.println(" Inserting books...");
                 repo.save(new Book("Kubernetes in Action"));
                 repo.save(new Book("Spring Boot 3 Guide"));
-                System.out.println("✅ Books inserted.");
+                System.out.println("Books inserted.");
             } catch (Exception e) {
-                System.err.println("❌ ERROR inserting books: " + e.getMessage());
+                System.err.println(" ERROR inserting books: " + e.getMessage());
                 e.printStackTrace();
             }
         };
