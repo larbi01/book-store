@@ -22,7 +22,7 @@ public class BookServiceApplication {
             System.out.println(" STARTING INIT");
 
             if (repo == null) {
-                System.out.println("❌ BookRepository is NULL!");
+                System.out.println("BookRepository is NULL!");
                 return;
             }
 
