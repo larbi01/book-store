@@ -33,6 +33,7 @@ Helm (facultatif, pour la gestion des déploiements Kubernetes)
 1. Cloner le projet
 
 git clone https://github.com/larbi01/book-store.git
+
 cd book-store
 
 2. Configuration des bases de données
@@ -40,8 +41,11 @@ cd book-store
 Assurez-vous que PostgreSQL est configuré correctement pour les deux services (Book-Service et Author-Service). Vous pouvez utiliser les fichiers YAML fournis :
 
 cd book-service/k8s
+
 kubectl apply -f postgres-deployment.yml
+
 cd ../../author-service/k8s
+
 kubectl apply -f postgres-deployment.yml
 
 3. Construction des images Docker
